@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/my_app_bar.dart';
 
-class Home extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   static const path = "Home";
-  const Home({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Hello World'),
-      ),
-      body: Column(children: [
+      appBar: MyAppBar(title:'Home'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
         Text(
           "This is my first app",
           style: Theme.of(context).textTheme.displayLarge,
@@ -19,7 +21,7 @@ class Home extends StatelessWidget {
           "This is my first app body line",
           style: Theme.of(context).textTheme.bodyLarge,
         )
-      ]),
+      ],),
     );
   }
 }
